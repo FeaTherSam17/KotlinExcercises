@@ -42,7 +42,32 @@ fun main() {
     //terminoCifra()
     //ordenarNumeros()
     //trianguloSegunLados()
+    //diasParaTerminarElAnio()
+    mostrarEstadoNotas()
+}
 
+private fun mostrarEstadoNotas(){
+/*Pedir una nota de 0 a 10 y mostrarla de la forma: Desaprobado, aprobado y excelente
+* usando...
+* 0-3 -> Desaprobado
+* 4-7 -> Aprobado
+* 8-10 -> Excelente!!
+* Cualquier otro caso -> Respuesta errónea
+* */
+
+    val nota: Int
+    val respuesta:String
+
+    println("Ingresa la nota")
+    nota = readln().toInt()
+
+    when(nota){
+        in 0..3->{respuesta = "Desaprobado :(("}
+        in 4..7 ->{respuesta = "Aprobado"}
+        in 8..10->{respuesta = "Excelente!!"}
+        else -> {respuesta = "Respuesta errónea"}
+    }
+    println(respuesta)
 
 }
 
@@ -57,44 +82,23 @@ private fun diasParaTerminarElAnio() {
 
     var diasRestanes: Int
 
-    when(mes){
-        1->{diasRestanes = 365-1}
-        2->{}
-        3->{}
-        4->{}
-        5->{}
-        6->{}
-        7->{}
-        8->{}
-        9->{}
-        10->{}
-        11->{}
-        12->{}
-        else->{println("Fecha incorrecta")}
+    /*
+      * Meses con 31 días
+      * enero, marzo, mayo, julio, agosto, octubre, diciembre
+      *
+      * Meses con 30 días
+      * nobiembre, abril, junio y septiembre
+      *
+      * */
+    val mesDias = arrayOf(0,31,28,31,30,31,30,31,31,30,31,30,31)
 
-    }
-    when(mes){
-        1,3,5,7,8,10,12 ->{diasRestanes = 31-dia}
-        4,6,9,11 ->{diasRestanes = 30}
-        2 -> diasRestanes = 29
-        else ->{}
-    }
+    //We sum since the month entered until the final month, then we suscract the day
+    diasRestanes = mesDias.sliceArray(mes..12).sum()-dia
 
     if (determinarBiciesto(anio)){
-        //Primero determinamos los días restantes del mes
-        /*
-        * Meses con 31 días
-        * enero, marzo, mayo, julio, agosto, octubre, diciembre
-        *
-        * Meses con 30 días
-        * nobiembre, abril, junio y septiembre
-        *
-        * */
-
-
-
+        println("Faltan ${diasRestanes+1} para terminar el año")
     }else{
-
+        println("Faltan ${diasRestanes} para terminar el año")
     }
 
 }
