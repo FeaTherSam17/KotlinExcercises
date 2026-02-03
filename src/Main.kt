@@ -43,7 +43,41 @@ fun main() {
     //ordenarNumeros()
     //trianguloSegunLados()
     //diasParaTerminarElAnio()
-    mostrarEstadoNotas()
+    //mostrarEstadoNotas()
+    convertirUnidadesMasa()
+}
+
+private fun convertirUnidadesMasa(){
+    /*
+    * Hacer un programa que pase de gramos a otras unidades de masa con un menú
+    *
+    * Kilogramo = 1000g
+    * Libras = 453.592g
+    * Onzas = 28.3495g
+    * Miligramo = g/1000
+    *
+    * */
+
+    //Creación del menú
+    println("Ingrese el número de gramos a convertir!")
+    val gramos = readln().toDouble()
+
+    println("**************************************************************")
+    println("***             INGRESE UN NÚMERO DEL MENÚ                 ***")
+    println("*** 1. Kilogramos                                          ***")
+    println("*** 2. Libras                                              ***")
+    println("*** 3. Onzas                                               ***")
+    println("*** 4. Miligramos                                          ***")
+    println("**************************************************************")
+    val opcionMenu = readln().toInt()
+
+    when(opcionMenu){
+        1->{println("$gramos gramos son ${gramos/1000} kilogramos")}
+        2->{println("$gramos gramos son ${gramos/453.592} libras")}
+        3->{println("$gramos gramos son ${gramos/28.3495} onzas")}
+        4->{println("$gramos gramos son ${gramos*1000} miliramos")}
+        else -> println("Opción inválida")
+    }
 }
 
 private fun mostrarEstadoNotas(){
