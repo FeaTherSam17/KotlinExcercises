@@ -44,7 +44,40 @@ fun main() {
     //trianguloSegunLados()
     //diasParaTerminarElAnio()
     //mostrarEstadoNotas()
-    convertirUnidadesMasa()
+    //convertirUnidadesMasa()
+    //determinarCaracterVocal()
+    aforoLocalPermitido()
+}
+
+private fun aforoLocalPermitido(){
+    /*Realizar un programa que permita ingresar la cantidad de personas que se encuentran en un supermercado.
+    * Debido a la pandemia, el aforo es del 40% y su totalidad es de 200. El programa deberá indicar si el aforo es aceptable, está a tope, ha sido sobrepasado*/
+
+    val aforo=200
+    println("Ingresar el número de personas")
+    val numeroPersonas = readln().toInt()
+
+    val estado = when{
+        aforo*.40 > numeroPersonas -> "Aceptable"
+        aforo *.40 == numeroPersonas.toDouble()->"A tope"
+        aforo *.40 < numeroPersonas->"Sobrepasado"
+        else -> "Intentalo de nuevo"
+    }
+    println(estado)
+
+}
+
+private fun determinarCaracterVocal(){
+    /*Dado un caracter, determinar si es una vocal*/
+    println("Ingresa una letra")
+    var letra = readln().lowercase().first()//Obtener el primer caracter
+
+    when(letra){
+        'a','e','i','o','u' -> println("Es una vocal")
+        else -> println("No es una vocal")
+    }
+
+
 }
 
 private fun convertirUnidadesMasa(){
