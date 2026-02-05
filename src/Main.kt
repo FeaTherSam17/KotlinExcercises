@@ -47,7 +47,56 @@ fun main() {
     //convertirUnidadesMasa()
     //determinarCaracterVocal()
     //aforoLocalPermitido()
-    menuOperaciones()
+    //menuOperaciones()
+    //diasParaTerminarMes()
+    tiempoTranscurrido()
+}
+
+private fun tiempoTranscurrido(){
+    /*Crear un programa que indique cuanto tiempo ha transcurrido en horas y minutos,
+    * ingresando los minutos transcurridos*/
+
+    //Siendo 1 Hora - 60 minutos
+    println("Ingrese los minutos")
+    val tiempo = readln().toInt()
+
+    if (tiempo>60){
+
+    }
+}
+
+private fun diasParaTerminarMes(){
+    /*Crear un programa que calcule cuantos días faltan para terminar el mes
+    * Ingresando el día, mes y año*/
+
+    println("Bienvenido al programa que calcula cuantos días faltan para terminar el mes")
+    println("Por favor ingresa el día")
+    val day = readln().toInt()
+    println("Por favor ingresa el mes")
+    val month = readln().toInt()
+    println("Por favor ingresa el año")
+    val year = readln().toInt()
+
+    var diasRestantes = 0
+    /*
+     * Meses con 31 días
+     * enero, marzo, mayo, julio, agosto, octubre, diciembre
+     *
+     * Meses con 30 días
+     * nobiembre, abril, junio y septiembre
+     *
+     * */
+    when(month){
+        1,3,5,7,8,10,12 -> println("Faltan ${31-day} para terminar el mes")
+        2 -> when{
+            determinarBiciesto(year)->{println("Faltan ${29-day} para terminar el mes")}
+            else -> {println("Faltan ${28-day} para terminar el mes")}
+        }
+        4,6,9,11 -> println("Faltan ${30-day} para terminar el mes")
+
+        else -> println("Vuelve a internarlo ")
+    }
+
 }
 
 private fun menuOperaciones(){
