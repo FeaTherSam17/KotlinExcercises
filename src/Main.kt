@@ -46,7 +46,35 @@ fun main() {
     //mostrarEstadoNotas()
     //convertirUnidadesMasa()
     //determinarCaracterVocal()
-    aforoLocalPermitido()
+    //aforoLocalPermitido()
+    menuOperaciones()
+}
+
+private fun menuOperaciones(){
+    /*Realizar un programa que registre dos números, y con ayuda de de un menú,
+    mostrar la respuesta de acuerdo a la operación básica seleccionada (Suma,Resta, Multiplicacion, sivisión)*/
+
+    println("Ingresa la operación que quieres realizar")
+    println("1. Suma")
+    println("2. Resta")
+    println("3. Multiplicación")
+    println("4. División")
+    val option = readln().toInt()
+
+    println("Ingresa el primer número")
+    val num1 = readln().toDouble()
+    println("Ingresa el segundo número")
+    val num2 = readln().toDouble()
+
+    when(option){
+        1->{println("La suma de $num1 + $num2 es: ${num1+num2}")}
+        2->{println("La resta de $num1 - $num2 es: ${num1-num2}")}
+        3->{println("La multiplicación de $num1 * $num2 es: ${num1*num2}")}
+        4->{println("La división de $num1 / $num2 es: ${num1/num2}")}
+        else -> println("Opción inválida")
+    }
+
+
 }
 
 private fun aforoLocalPermitido(){
