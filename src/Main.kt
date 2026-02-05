@@ -60,8 +60,21 @@ private fun tiempoTranscurrido(){
     println("Ingrese los minutos")
     val tiempo = readln().toInt()
 
-    if (tiempo>60){
+    val minutos:Int
+    val horas:Int
 
+    if (tiempo>60){//Comienza a calcular
+        when{
+            tiempo%60==0 ->{println("El tiempo transcurrido son ${tiempo/60}")}
+            else->{
+                horas = tiempo/60
+                minutos = tiempo%60
+                println("El tiempo transcurrido son ${horas} horas con ${minutos} minutos")
+            }
+
+        }
+    }else{
+        println("Los minutos transcurridos son: $tiempo")
     }
 }
 
