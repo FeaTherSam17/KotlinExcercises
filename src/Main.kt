@@ -49,7 +49,56 @@ fun main() {
     //aforoLocalPermitido()
     //menuOperaciones()
     //diasParaTerminarMes()
-    tiempoTranscurrido()
+    //tiempoTranscurrido()
+    //calcularPagoRenuncia()
+
+}
+
+private fun calcularPagoRenuncia(){
+    /*Crear un programa que calcule el sueldo final de un empleado que se le paga 30$ la hora trabajada al mes
+    * asi mismo, todos los empleados reciben un pago de gratificación de acuerdo a la cantidad de años que tienen trabajando en la empresa
+    * Años en la empresa            % Gratificacion
+    * 0-5                               60%
+    * 6-10                              80%
+    * +11                               100%
+    *
+    * Tener en cuenta que full time -> 48 horas
+    * Part time -> 24 horas
+    * */
+
+    //Ingreso de datos
+    println("Ingresa los años que lleva trabajando")
+    val years = readln().toInt()
+    println("Ingresa los meses que lleva trabajando")
+    val months = readln().toInt()
+
+    //determinar cuantas horas se trabaja
+    println("Ingresa el tipo de contrato \n1. Full time -> 48 horas \n2. Part time -> 24 horas")
+    val contrato = readln().toInt()
+
+    val sueldo = calcularPago(years,months,contrato)
+
+    val gratificacion = calcularGratificacion(years, sueldo?:0.0)
+
+    println("El sueldo del empledo es: ${sueldo} \nY su gratificación es: ${gratificacion}")
+
+}
+
+fun calcularPago(years:Int, months:Int, contrato:Int): Double?{
+    when(contrato){
+        1->{ return ((years*12*48*30) + (months*48*30)).toDouble() }//Calculo de los años, mas los meses
+        2->{return ((years*12*24*30) + (months*24*30)).toDouble()}
+        else -> return null
+    }
+}
+
+fun calcularGratificacion(years: Int, sueldo: Double): Double?{
+    when{
+        years in 0..5->{ return sueldo*.60}
+        years in 6..10->{return  sueldo*.80}
+        years >= 11 ->{return  sueldo*1.00}
+        else -> return null
+    }
 }
 
 private fun tiempoTranscurrido(){
