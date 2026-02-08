@@ -51,8 +51,38 @@ fun main() {
     //diasParaTerminarMes()
     //tiempoTranscurrido()
     //calcularPagoRenuncia()
+    cantidadNumerosImpares()
 
 }
+private  fun cantidadNumerosImpares(){
+    /*Dado un rango de números enteros, obtener la cantidad de números pares e impares que contiene el rango,
+    * sin contar los múltiplos de 5*/
+
+    //Obtener los datos
+    println("Ingrese el número inicial del rango")
+    val inicioRango = readln().toInt()
+    println("Ingrese el número final del rango")
+    val fin1Rango = readln().toInt()
+
+    //
+    var cantidadPares= 0
+    var cantidadImpares =0
+
+    for (i in inicioRango..fin1Rango){
+        if (i%5 != 0){
+            if(i%2==0){//Numero par
+                cantidadPares++
+            }else{//Numero impar
+                cantidadImpares++
+            }
+        }
+    }
+
+    println("El número de pares dentro del rango sin contar a los múltiplos de 5 son: ${cantidadPares}")
+    println("El número de impares dentro del rango sin contar a los múltiplos de 5 son: ${cantidadImpares}")
+
+}
+
 
 private fun calcularPagoRenuncia(){
     /*Crear un programa que calcule el sueldo final de un empleado que se le paga 30$ la hora trabajada al mes
