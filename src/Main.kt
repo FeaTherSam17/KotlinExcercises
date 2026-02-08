@@ -51,7 +51,15 @@ fun main() {
     //diasParaTerminarMes()
     //tiempoTranscurrido()
     //calcularPagoRenuncia()
-    cantidadNumerosImpares()
+    //cantidadNumerosImpares()
+    factorialDeUnNumero()
+
+}
+
+private fun factorialDeUnNumero(){
+    println("Ingrese el numero para calcular su factorial")
+    val numero = readln().toInt()
+
 
 }
 private  fun cantidadNumerosImpares(){
