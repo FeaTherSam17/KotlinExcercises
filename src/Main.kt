@@ -59,6 +59,14 @@ fun main() {
 private fun factorialDeUnNumero(){
     println("Ingrese el numero para calcular su factorial")
     val numero = readln().toInt()
+    var factorial = 1
+
+    for(i in numero downTo 1){
+        println(i)
+        factorial = factorial*i // i es al valor iterable, lo que va a cambiar
+    }
+
+    println("El factorial de $numero es $factorial")
 
 
 }
