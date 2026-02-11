@@ -52,8 +52,23 @@ fun main() {
     //tiempoTranscurrido()
     //calcularPagoRenuncia()
     //cantidadNumerosImpares()
-    factorialDeUnNumero()
+    //factorialDeUnNumero()
+    calcularTotalNumerosIngresados()
 
+}
+
+private fun calcularTotalNumerosIngresados(){
+    //El ciclo se debe detener cuando el usuario ingrese el numero 0
+    var numero = 1
+    var contador=0
+
+    while (numero!=0){
+        println("Ingrese un número")
+        numero = readln().toInt()
+        if (numero!=0) contador++
+
+    }
+    println("La cantidad de números ingresados son: $contador")
 }
 
 private fun factorialDeUnNumero(){
