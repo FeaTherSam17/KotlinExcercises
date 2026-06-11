@@ -23,9 +23,11 @@ fun main() {
 class Bid(val amount: Int, val bidder: String)
  
 fun auctionPrice(bid: Bid?, minimumPrice: Int): Int {
-   // Fill in the code.
-   if(bid != null){//Indica que si hay una oferta
+/*
+  if(bid != null){//Indica que si hay una oferta
         return bid.amount
    }
    return minimumPrice //Indica que no hubo una oferta, por lo que se vende al precio mínimo
+*/ 
+   return bid?.amount ?: minimumPrice //Otra forma de escribir lo mismo, usando el operador Elvis (?:) para indicar que si bid es null, se devuelve minimumPrice
 }
